@@ -8,10 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "history_game",
-       uniqueConstraints = {
-        @UniqueConstraint(name = "uk_history_game_season", columnNames = "season")
-       })
+@Table(name = "history_game")
 public class HistoryGame {
 
     @Id
@@ -19,7 +16,7 @@ public class HistoryGame {
     private Long id;
 
     @Min(0)
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private int season;
 
     @Column(columnDefinition = "TEXT",nullable = false)

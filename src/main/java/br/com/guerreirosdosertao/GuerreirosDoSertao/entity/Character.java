@@ -10,13 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "characters",
-       indexes = {
-       @Index(name = "ix_characters_name", columnList = "name")
-       },
-        uniqueConstraints = {
-                @UniqueConstraint(name = "uk_characters", columnNames = "name")
-        })
+@Table(name = "characters")
 public class Character {
 
 
@@ -24,7 +18,7 @@ public class Character {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false, length = 120, unique = true)
     private String name;
 
     @Min(0)

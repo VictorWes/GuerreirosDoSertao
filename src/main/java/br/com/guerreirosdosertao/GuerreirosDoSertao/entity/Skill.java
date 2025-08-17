@@ -7,17 +7,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "skill",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "uk_skill", columnNames = "habilityName")
-        })
+@Table(name = "skill")
 public class Skill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false, length = 120, unique = true)
     private String habilityName;
 
     @Column(nullable = false, length = 120)

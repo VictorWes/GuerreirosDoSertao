@@ -9,15 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "users",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "uk_users_email", columnNames = "email"),
-                @UniqueConstraint(name = "uk_users_cpf", columnNames = "cpf")
-        },
-        indexes = {
-                @Index(name = "ix_users_email", columnList = "email"),
-                @Index(name = "ix_users_cpf", columnList = "cpf")
-        })
+@Table(name = "users")
 public class User {
 
     @Id
@@ -27,10 +19,10 @@ public class User {
     @Column(nullable = false, length = 120)
     private String name;
 
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false, length = 120, unique = true)
     private String email;
 
-    @Column(nullable = false, length = 11)
+    @Column(nullable = false, length = 11, unique = true)
     private String cpf;
 
     @Column(nullable = false)

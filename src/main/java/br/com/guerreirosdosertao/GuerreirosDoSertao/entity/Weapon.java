@@ -7,17 +7,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "weapon",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "uk_weapon", columnNames = "nameWeapon")
-        })
+@Table(name = "weapon")
 public class Weapon {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false, length = 120, unique = true)
     private String nameWeapon;
 
     @Min(1)

@@ -6,17 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "clans",
-     uniqueConstraints = {
-        @UniqueConstraint(name = "uk_clans_name", columnNames = "name")
-      })
+@Table(name = "clans")
 public class Clan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false, length = 120, unique = true)
     private String name;
 
     @Column(nullable = false, length = 120)
