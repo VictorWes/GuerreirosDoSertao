@@ -25,7 +25,7 @@ public class HistoryGame {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "city_id", nullable = false,
             foreignKey = @ForeignKey(name = "fk_history_game_city"))
-    private Set<City> city = new HashSet<>();
+    private City city;
 
 
 

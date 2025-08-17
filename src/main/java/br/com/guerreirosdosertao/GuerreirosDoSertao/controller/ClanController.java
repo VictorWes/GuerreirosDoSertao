@@ -6,5 +6,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/guerreirosdosertao/clan")
-public class ClanRepository {
+public class ClanController {
 }

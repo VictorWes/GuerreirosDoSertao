@@ -32,6 +32,6 @@ public class Weapon {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "character_id",
                foreignKey = @ForeignKey(name = "fk_weapon"))
-    private Set<Character> characters = new HashSet<>();
+    private Character characters;
 
 }

@@ -31,7 +31,7 @@ public class Character {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "users_id",
                 foreignKey = @ForeignKey(name = "fk_character_users"))
-    private User user;
+    private User users;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_id",
