@@ -1,0 +1,4 @@
+CREATE TABLE city (
+  id SERIAL PRIMARY KEY,
+  city_name VARCHAR(120) NOT NULL UNIQUE
+);

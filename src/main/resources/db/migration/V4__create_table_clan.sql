@@ -1,0 +1,6 @@
+CREATE TABLE clans (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(120) NOT NULL UNIQUE,
+  description VARCHAR(120) NOT NULL,
+  clan_history TEXT NOT NULL
+);
