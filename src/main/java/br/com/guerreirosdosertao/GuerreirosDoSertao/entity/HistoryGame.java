@@ -4,9 +4,6 @@ package br.com.guerreirosdosertao.GuerreirosDoSertao.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
 @Table(name = "history_game")
 public class HistoryGame {
