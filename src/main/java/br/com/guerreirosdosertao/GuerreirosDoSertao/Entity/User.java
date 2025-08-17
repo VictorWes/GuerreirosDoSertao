@@ -34,7 +34,7 @@ public class User {
     @Column(nullable = false, length = 11)
     private String cpf;
 
-    @Column(nullable = false, length = 255)
+    @Column(nullable = false)
     private String password;
 
     @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
