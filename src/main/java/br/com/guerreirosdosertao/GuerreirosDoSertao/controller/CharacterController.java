@@ -1,0 +1,9 @@
+package br.com.guerreirosdosertao.GuerreirosDoSertao.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/guerreirosdosertao/character")
+public class CharacterController {
+}
