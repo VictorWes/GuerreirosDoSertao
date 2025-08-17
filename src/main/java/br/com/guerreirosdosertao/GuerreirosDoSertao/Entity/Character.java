@@ -13,7 +13,10 @@ import java.util.Set;
 @Table(name = "characters",
        indexes = {
        @Index(name = "ix_characters_name", columnList = "name")
-       })
+       },
+        uniqueConstraints = {
+                @UniqueConstraint(name = "uk_characters", columnNames = "name")
+        })
 public class Character {
 
 

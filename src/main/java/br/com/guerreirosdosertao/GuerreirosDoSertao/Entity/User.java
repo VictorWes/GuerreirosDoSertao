@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name = "users",
         uniqueConstraints = {
                 @UniqueConstraint(name = "uk_users_email", columnNames = "email"),
-                @UniqueConstraint(name = "uk_users_password", columnNames = "cpf")
+                @UniqueConstraint(name = "uk_users_cpf", columnNames = "cpf")
         },
         indexes = {
                 @Index(name = "ix_users_email", columnList = "email"),

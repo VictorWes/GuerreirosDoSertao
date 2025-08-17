@@ -22,6 +22,9 @@ public class Clan {
     @Column(nullable = false, length = 120)
     private String description;
 
+    @Column(columnDefinition = "TEXT",nullable = false)
+    private String clanHistory;
+
     @OneToMany(mappedBy = "clans", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Character> characters = new ArrayList<>();
 
