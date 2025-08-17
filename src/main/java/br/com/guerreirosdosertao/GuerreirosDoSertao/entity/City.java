@@ -20,7 +20,7 @@ public class City {
     private Set<Character> characters = new HashSet<>();
 
     @OneToMany(mappedBy = "city", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private HistoryGame historyGame;
+    private Set<HistoryGame> historyGame;
 
 
 
