@@ -39,6 +39,81 @@ public class Skill {
     @ManyToMany(mappedBy = "skills")
     private Set<Character> characters = new HashSet<>();
 
+    public Skill() {
+    }
 
+    public Skill(Long id, String habilityName, String description, int firePower, int manaSpent, int difficultyLearning, int requiredLevel, Set<Character> characters) {
+        this.id = id;
+        this.habilityName = habilityName;
+        this.description = description;
+        this.firePower = firePower;
+        this.manaSpent = manaSpent;
+        this.difficultyLearning = difficultyLearning;
+        this.requiredLevel = requiredLevel;
+        this.characters = characters;
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getHabilityName() {
+        return habilityName;
+    }
+
+    public void setHabilityName(String habilityName) {
+        this.habilityName = habilityName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getFirePower() {
+        return firePower;
+    }
+
+    public void setFirePower(int firePower) {
+        this.firePower = firePower;
+    }
+
+    public int getManaSpent() {
+        return manaSpent;
+    }
+
+    public void setManaSpent(int manaSpent) {
+        this.manaSpent = manaSpent;
+    }
+
+    public int getDifficultyLearning() {
+        return difficultyLearning;
+    }
+
+    public void setDifficultyLearning(int difficultyLearning) {
+        this.difficultyLearning = difficultyLearning;
+    }
+
+    public int getRequiredLevel() {
+        return requiredLevel;
+    }
+
+    public void setRequiredLevel(int requiredLevel) {
+        this.requiredLevel = requiredLevel;
+    }
+
+    public Set<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(Set<Character> characters) {
+        this.characters = characters;
+    }
 }

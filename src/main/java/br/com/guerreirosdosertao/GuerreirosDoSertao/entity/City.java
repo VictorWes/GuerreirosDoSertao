@@ -23,6 +23,45 @@ public class City {
     private Set<HistoryGame> historyGame;
 
 
+    public City() {
+    }
 
+    public City(Long id, String cityName, Set<Character> characters, Set<HistoryGame> historyGame) {
+        this.id = id;
+        this.cityName = cityName;
+        this.characters = characters;
+        this.historyGame = historyGame;
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public Set<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(Set<Character> characters) {
+        this.characters = characters;
+    }
+
+    public Set<HistoryGame> getHistoryGame() {
+        return historyGame;
+    }
+
+    public void setHistoryGame(Set<HistoryGame> historyGame) {
+        this.historyGame = historyGame;
+    }
 }
