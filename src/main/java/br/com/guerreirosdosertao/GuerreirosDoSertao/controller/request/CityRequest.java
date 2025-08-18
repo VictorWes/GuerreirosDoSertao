@@ -3,5 +3,5 @@ package br.com.guerreirosdosertao.GuerreirosDoSertao.controller.request;
 import lombok.Builder;
 
 @Builder
-public record CityRequest() {
+public record CityRequest(String cityName) {
 }
