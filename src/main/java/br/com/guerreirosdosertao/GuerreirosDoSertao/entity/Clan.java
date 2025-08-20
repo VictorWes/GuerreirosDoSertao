@@ -1,10 +1,12 @@
 package br.com.guerreirosdosertao.GuerreirosDoSertao.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Builder
 @Entity
 @Table(name = "clans")
 public class Clan {

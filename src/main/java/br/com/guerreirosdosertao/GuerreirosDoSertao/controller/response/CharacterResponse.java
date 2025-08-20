@@ -4,6 +4,7 @@ import br.com.guerreirosdosertao.GuerreirosDoSertao.embeddable.Atributo;
 import lombok.Builder;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Builder
@@ -11,13 +12,13 @@ public record CharacterResponse(Long id,
                                 String name,
                                 int age,
                                 String biography,
-                                UserResponse user,
+                                UserResponseDetail user,
                                 ClanResponse clan,
-                                Set<WeaponResponse> weapons,
+                                List<WeaponResponse> weapons,
                                 HistoryGameResponse historyGame,
                                 CityResponse city,
                                 Atributo atributo,
-                                Set<SkillResponse> skills,
+                                List<SkillResponse> skills,
                                 LocalDateTime createdAt,
                                 LocalDateTime updatedAt) {
 }

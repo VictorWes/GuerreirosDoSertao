@@ -2,10 +2,15 @@ package br.com.guerreirosdosertao.GuerreirosDoSertao.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
+import lombok.Builder;
+import org.w3c.dom.stylesheets.LinkStyle;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+@Builder
 @Entity
 @Table(name = "skill")
 public class Skill {
@@ -37,12 +42,12 @@ public class Skill {
     private int requiredLevel;
 
     @ManyToMany(mappedBy = "skills")
-    private Set<Character> characters = new HashSet<>();
+    private List<Character> characters = new ArrayList<>();
 
     public Skill() {
     }
 
-    public Skill(Long id, String habilityName, String description, int firePower, int manaSpent, int difficultyLearning, int requiredLevel, Set<Character> characters) {
+    public Skill(Long id, String habilityName, String description, int firePower, int manaSpent, int difficultyLearning, int requiredLevel, List<Character> characters) {
         this.id = id;
         this.habilityName = habilityName;
         this.description = description;
@@ -109,11 +114,11 @@ public class Skill {
         this.requiredLevel = requiredLevel;
     }
 
-    public Set<Character> getCharacters() {
+    public List<Character> getCharacters() {
         return characters;
     }
 
-    public void setCharacters(Set<Character> characters) {
+    public void setCharacters(List<Character> characters) {
         this.characters = characters;
     }
 }

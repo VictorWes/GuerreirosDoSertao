@@ -1,14 +1,19 @@
 package br.com.guerreirosdosertao.GuerreirosDoSertao.entity;
 
+import br.com.guerreirosdosertao.GuerreirosDoSertao.embeddable.Atributo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
+import lombok.Builder;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+@Builder
 @Entity
 @Table(name = "characters")
 public class Character {
@@ -39,7 +44,7 @@ public class Character {
     private Clan clan;
 
     @OneToMany(mappedBy = "characters", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Set<Weapon> weapons = new HashSet<>();
+    private List<Weapon> weapons = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "history_id", nullable = false,
@@ -55,7 +60,7 @@ public class Character {
     @JoinTable(name = "character_skills",
                joinColumns = @JoinColumn(name = "character_id"),
                inverseJoinColumns = @JoinColumn(name = "skills_id"))
-    private Set<Skill> skills = new HashSet<>();
+    private List<Skill> skills = new ArrayList<>();
 
     @CreationTimestamp
     @Column(name = "created_at")
@@ -65,11 +70,15 @@ public class Character {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    @Embedded
+    private Atributo atributo;
+
+
 
     public Character() {
     }
 
-    public Character(Long id, String name, int age, String biography, User users, Clan clan, Set<Weapon> weapons, HistoryGame historyGame, City city, Set<Skill> skills, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Character(Long id, String name, int age, String biography, User users, Clan clan, List<Weapon> weapons, HistoryGame historyGame, City city, List<Skill> skills, LocalDateTime createdAt, LocalDateTime updatedAt, Atributo atributo) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -82,6 +91,7 @@ public class Character {
         this.skills = skills;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.atributo = atributo;
     }
 
     public Long getId() {
@@ -132,11 +142,11 @@ public class Character {
         this.clan = clan;
     }
 
-    public Set<Weapon> getWeapons() {
+    public List<Weapon> getWeapons() {
         return weapons;
     }
 
-    public void setWeapons(Set<Weapon> weapons) {
+    public void setWeapons(List<Weapon> weapons) {
         this.weapons = weapons;
     }
 
@@ -156,11 +166,11 @@ public class Character {
         this.city = city;
     }
 
-    public Set<Skill> getSkills() {
+    public List<Skill> getSkills() {
         return skills;
     }
 
-    public void setSkills(Set<Skill> skills) {
+    public void setSkills(List<Skill> skills) {
         this.skills = skills;
     }
 
@@ -178,5 +188,13 @@ public class Character {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Atributo getAtributo() {
+        return atributo;
+    }
+
+    public void setAtributo(Atributo atributo) {
+        this.atributo = atributo;
     }
 }

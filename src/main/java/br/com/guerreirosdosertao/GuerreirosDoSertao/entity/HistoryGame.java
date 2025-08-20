@@ -3,7 +3,9 @@ package br.com.guerreirosdosertao.GuerreirosDoSertao.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
+import lombok.Builder;
 
+@Builder
 @Entity
 @Table(name = "history_game")
 public class HistoryGame {

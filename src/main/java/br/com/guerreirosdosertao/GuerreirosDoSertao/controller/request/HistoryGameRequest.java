@@ -4,6 +4,5 @@ import lombok.Builder;
 
 @Builder
 public record HistoryGameRequest(int season,
-                                 String history,
-                                 Long cityId) {
+                                 String history) {
 }
