@@ -9,10 +9,6 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class HistoryGameMapper {
 
-//    Long id,
-//    int season,
-//    String history,
-//    CityResponse city
 
     public static HistoryGame toEntity(HistoryGameRequest request){
 
