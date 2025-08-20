@@ -2,10 +2,9 @@ package br.com.guerreirosdosertao.GuerreirosDoSertao.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
+import lombok.Builder;
 
-import java.util.HashSet;
-import java.util.Set;
-
+@Builder
 @Entity
 @Table(name = "weapon")
 public class Weapon {

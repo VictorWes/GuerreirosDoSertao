@@ -6,6 +6,5 @@ import lombok.Builder;
 public record WeaponRequest(  String nameWeapon,
                               int powerDamage,
                               int requiredLevel,
-                              int difficultyLearning,
-                              Long characterId) {
+                              int difficultyLearning) {
 }

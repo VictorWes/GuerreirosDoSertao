@@ -1,10 +1,14 @@
 package br.com.guerreirosdosertao.GuerreirosDoSertao.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+@Builder
 @Entity
 @Table(name = "city")
 public class City {
@@ -17,16 +21,16 @@ public class City {
     private String cityName;
 
     @OneToMany(mappedBy = "city", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Set<Character> characters = new HashSet<>();
+    private List<Character> characters = new ArrayList<>();
 
     @OneToMany(mappedBy = "city", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Set<HistoryGame> historyGame;
+    private List<HistoryGame> historyGame;
 
 
     public City() {
     }
 
-    public City(Long id, String cityName, Set<Character> characters, Set<HistoryGame> historyGame) {
+    public City(Long id, String cityName, List<Character> characters, List<HistoryGame> historyGame) {
         this.id = id;
         this.cityName = cityName;
         this.characters = characters;
@@ -49,19 +53,19 @@ public class City {
         this.cityName = cityName;
     }
 
-    public Set<Character> getCharacters() {
+    public List<Character> getCharacters() {
         return characters;
     }
 
-    public void setCharacters(Set<Character> characters) {
+    public void setCharacters(List<Character> characters) {
         this.characters = characters;
     }
 
-    public Set<HistoryGame> getHistoryGame() {
+    public List<HistoryGame> getHistoryGame() {
         return historyGame;
     }
 
-    public void setHistoryGame(Set<HistoryGame> historyGame) {
+    public void setHistoryGame(List<HistoryGame> historyGame) {
         this.historyGame = historyGame;
     }
 }

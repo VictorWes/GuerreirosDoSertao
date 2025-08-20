@@ -2,7 +2,9 @@ package br.com.guerreirosdosertao.GuerreirosDoSertao.controller.response;
 
 import lombok.Builder;
 
+import java.util.List;
 import java.util.Set;
+
 
 @Builder
 public record SkillResponse( Long id,
@@ -12,5 +14,5 @@ public record SkillResponse( Long id,
                              int manaSpent,
                              int difficultyLearning,
                              int requiredLevel,
-                             Set<CharacterResponse> characters) {
+                             List<CharacterResponse> characters) {
 }
