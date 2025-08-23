@@ -2,10 +2,14 @@ package br.com.guerreirosdosertao.GuerreirosDoSertao.controller;
 
 import br.com.guerreirosdosertao.GuerreirosDoSertao.config.TokenService;
 import br.com.guerreirosdosertao.GuerreirosDoSertao.controller.request.LoginRequest;
+import br.com.guerreirosdosertao.GuerreirosDoSertao.controller.request.SkillRequest;
 import br.com.guerreirosdosertao.GuerreirosDoSertao.controller.request.UserRequest;
 import br.com.guerreirosdosertao.GuerreirosDoSertao.controller.response.LoginResponse;
+import br.com.guerreirosdosertao.GuerreirosDoSertao.controller.response.SkillResponse;
 import br.com.guerreirosdosertao.GuerreirosDoSertao.controller.response.UserSummaryResponse;
+import br.com.guerreirosdosertao.GuerreirosDoSertao.entity.Skill;
 import br.com.guerreirosdosertao.GuerreirosDoSertao.entity.User;
+import br.com.guerreirosdosertao.GuerreirosDoSertao.mapper.SkillMapper;
 import br.com.guerreirosdosertao.GuerreirosDoSertao.mapper.UserMapper;
 import br.com.guerreirosdosertao.GuerreirosDoSertao.service.UserService;
 import org.antlr.v4.runtime.Token;
@@ -52,5 +56,6 @@ public class UserController {
 
 
     }
+
 
 }

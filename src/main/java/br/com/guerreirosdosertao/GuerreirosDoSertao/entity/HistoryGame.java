@@ -1,6 +1,7 @@
 package br.com.guerreirosdosertao.GuerreirosDoSertao.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import lombok.Builder;
@@ -22,8 +23,9 @@ public class HistoryGame {
     private String history;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "city_id", nullable = false,
+    @JoinColumn(name = "city_id",
             foreignKey = @ForeignKey(name = "fk_history_game_city"))
+    @JsonProperty("city")
     private City city;
 
 

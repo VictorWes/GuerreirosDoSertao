@@ -1,0 +1,1 @@
+ALTER TABLE history_game ALTER COLUMN city_id DROP NOT NULL;

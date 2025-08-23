@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @UtilityClass
 public class SkillMapper {
 
-    public static Skill toEntity(SkillRequest skillRequest, List<Character> characters){
+    public static Skill toEntity(SkillRequest skillRequest){
 
         return Skill
                 .builder()
@@ -24,7 +24,6 @@ public class SkillMapper {
                 .firePower(skillRequest.firePower())
                 .difficultyLearning(skillRequest.difficultyLearning())
                 .requiredLevel(skillRequest.requiredLevel())
-                .characters(characters)
                 .build();
 
     }
@@ -49,5 +48,6 @@ public class SkillMapper {
                 .build();
 
     }
+
 
 }
